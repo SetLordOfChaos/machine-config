@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "Set";
-  home.homeDirectory = "/home/Set";
+  home.username = "set";
+  home.homeDirectory = "/home/set";
 
   home.stateVersion = "25.05";
 
@@ -33,7 +33,7 @@
 
   programs.git = {
     enable = true;
-    userName = "Set";
+    userName = "set";
     userEmail = "setlordchaos@gmail.com";
   };
 
