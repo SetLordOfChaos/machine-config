@@ -8,6 +8,8 @@
 
   programs.home-manager.enable = true;
 
+  home-manager.backupFileExtension = "backup-before-nix";
+
   # Important for Ubuntu / non-NixOS
   targets.genericLinux.enable = true;
 
@@ -33,8 +35,11 @@
 
   programs.git = {
     enable = true;
-    userName = "set";
-    userEmail = "setlordchaos@gmail.com";
+  };
+
+  programs.git.extraConfig = {
+    user.name = "Set";
+    user.email = "setlordchaos@gmail.com";
   };
 
   programs.bash = {
