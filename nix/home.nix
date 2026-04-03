@@ -35,8 +35,8 @@
     enable = true;
   };
 
-  programs.git.extraConfig = {
-    user.name = "Set";
+  programs.git.settings = {
+    user.name = "set";
     user.email = "setlordchaos@gmail.com";
   };
 
