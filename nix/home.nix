@@ -8,8 +8,6 @@
 
   programs.home-manager.enable = true;
 
-  home-manager.backupFileExtension = "backup-before-nix";
-
   # Important for Ubuntu / non-NixOS
   targets.genericLinux.enable = true;
 
