@@ -42,16 +42,16 @@ let
           --replace 'Exec=AppRun' 'Exec=${pname}' \
           --replace 'Icon=${pname}' 'Icon=${pname}'
       else
-        cat > $out/share/applications/${pname}.desktop <<EOF
-        [Desktop Entry]
-        Name=Obsidian
-        Exec=${pname} %U
-        Terminal=false
-        Type=Application
-        Icon=${pname}
-        Categories=Office;Utility;
-        StartupWMClass=obsidian
-        EOF
+        printf '%s\n' \
+          '[Desktop Entry]' \
+          'Name=Obsidian' \
+          'Exec=${pname} %U' \
+          'Terminal=false' \
+          'Type=Application' \
+          'Icon=${pname}' \
+          'Categories=Office;Utility;' \
+          'StartupWMClass=obsidian' \
+          > $out/share/applications/${pname}.desktop
       fi
 
       # Icon
