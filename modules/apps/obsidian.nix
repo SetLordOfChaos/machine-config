@@ -3,7 +3,7 @@
 let
   version = "1.12.7";
 
-  obsidian = pkgs.appimageTools.wrapType2 {
+  obsidianRaw = pkgs.appimageTools.wrapType2 {
     pname = "obsidian";
     inherit version;
 
@@ -12,6 +12,10 @@ let
       sha256 = "sha256:f6d8b96fe685a8632c819cc093a248ace0f6bab410f44a6c929a2611b1ebb17c";
     };
   };
+
+  obsidian = pkgs.writeShellScriptBin "obsidian" ''
+    exec ${obsidianRaw}/bin/obsidian --no-sandbox "$@"
+  '';
 in
 {
   home.packages = [
