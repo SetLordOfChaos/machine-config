@@ -74,4 +74,7 @@ in
   home.packages = [
     obsidian
   ];
+
+  home.file.".local/share/applications/obsidian.desktop".source =
+    "${obsidian}/share/applications/obsidian.desktop";
 }
