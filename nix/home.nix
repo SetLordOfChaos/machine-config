@@ -25,7 +25,7 @@
     unzip
     zip
     htop
-    neovim
+    vscode
     tmux
     starship
     zoxide
@@ -45,7 +45,7 @@
     shellAliases = {
       ll = "eza -lah";
       gs = "git status";
-      v = "nvim";
+      v = "code";
     };
   };
 
@@ -55,6 +55,10 @@
   programs.zoxide.enable = true;
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "code --wait";
   };
+
+  imports = [
+    ./../modules/apps/obsidian.nix
+  ];
 }
