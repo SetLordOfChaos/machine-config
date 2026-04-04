@@ -77,4 +77,7 @@ in
 
   home.file.".local/share/applications/obsidian.desktop".source =
     "${obsidian}/share/applications/obsidian.desktop";
+
+  home.file.".local/share/icons/hicolor/512x512/apps/obsidian.png".source =
+    "${obsidian}/share/icons/hicolor/512x512/apps/obsidian.png";
 }
