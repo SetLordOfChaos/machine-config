@@ -1,0 +1,26 @@
+[/]
+app-picker-layout=[{'ce7e0685-e422-4181-9709-a21fe50d1899': <{'position': <0>}>, 'System': <{'position': <1>}>, '434c5d86-302d-488a-b48e-5e26c2792ec4': <{'position': <2>}>, 'Utilities': <{'position': <3>}>, '20e38910-d9db-4f43-ab09-fb62dd0b63b6': <{'position': <4>}>, '0b936f74-9780-40dc-bbad-f3bd90038673': <{'position': <5>}>, 'e72c6830-ef41-40f4-969a-d96db134e9b2': <{'position': <6>}>, 'obsidian.desktop': <{'position': <7>}>, 'org.gnome.Calculator.desktop': <{'position': <8>}>}]
+enabled-extensions=['ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com']
+favorite-apps=['firefox_firefox.desktop', 'thunderbird_thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Rhythmbox3.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Yelp.desktop']
+last-selected-power-profile='power-saver'
+welcome-dialog-last-shown-version='49.0'
+
+[extensions/dash-to-dock]
+dash-max-icon-size=48
+dock-fixed=true
+dock-position='LEFT'
+
+[extensions/ding]
+check-x11wayland=true
+
+[extensions/tiling-assistant]
+focus-hint-color='rgb(203,67,20)'
+last-version-installed=53
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
+tiling-popup-all-workspace=true
+
+[ubuntu]
+startup-sound='warty-startup'
+
+[world-clocks]
+locations=[<(uint32 2, <('San Jose', 'KSJC', true, [(0.65204046995241238, -2.1279781519014169)], [(0.65169522637307531, -2.1274683063203246)])>)>, <(uint32 2, <('Indianapolis', 'KIND', true, [(0.69333204535474746, -1.5059040078213661)], [(0.69408911682438501, -1.5037415099715601)])>)>, <(uint32 2, <('Taipei', 'RCSS', true, [(0.43749587165100939, 2.1214477057991075)], [(0.43716593460921238, 2.1211308587267008)])>)>, <(uint32 2, <('Tokyo', 'RJTI', true, [(0.62191898430954862, 2.4408429589140699)], [(0.62282074357417661, 2.4391218722853854)])>)>]

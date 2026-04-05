@@ -1,0 +1,9 @@
+[/]
+dynamic-workspaces=true
+edge-tiling=false
+overlay-key='Super_L'
+workspaces-only-on-primary=true
+
+[keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []

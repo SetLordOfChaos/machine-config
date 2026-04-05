@@ -1,0 +1,152 @@
+[a11y]
+always-show-universal-access-status=true
+
+[app-folders]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus', '20e38910-d9db-4f43-ab09-fb62dd0b63b6', 'ce7e0685-e422-4181-9709-a21fe50d1899', '434c5d86-302d-488a-b48e-5e26c2792ec4', '0b936f74-9780-40dc-bbad-f3bd90038673', 'e72c6830-ef41-40f4-969a-d96db134e9b2']
+
+[app-folders/folders/0b936f74-9780-40dc-bbad-f3bd90038673]
+apps=['org.gnome.Loupe.desktop', 'org.gnome.Shotwell.desktop', 'org.gnome.Totem.desktop', 'org.gnome.Snapshot.desktop']
+name='Graphics'
+
+[app-folders/folders/20e38910-d9db-4f43-ab09-fb62dd0b63b6]
+apps=['libreoffice-startcenter.desktop', 'libreoffice-draw.desktop', 'libreoffice-calc.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop']
+name='LibreOffice'
+translate=false
+
+[app-folders/folders/434c5d86-302d-488a-b48e-5e26c2792ec4]
+apps=['keepersecurity_keepersecurity.desktop', 'org.gnome.seahorse.Application.desktop', 'desktop-security-center_desktop-security-center.desktop', 'software-properties-gtk.desktop', 'update-manager.desktop', 'firmware-updater_firmware-updater.desktop', 'software-properties-drivers.desktop']
+name='Security & Updates'
+translate=false
+
+[app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[app-folders/folders/System]
+apps=['org.gnome.Settings.desktop', 'org.gnome.Ptyxis.desktop', 'nm-connection-editor.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.PowerStats.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+
+[app-folders/folders/Utilities]
+apps=['org.gnome.TextEditor.desktop', 'org.gnome.Papers.desktop', 'simple-scan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop']
+name='Text & Documents'
+translate=false
+
+[app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[app-folders/folders/ce7e0685-e422-4181-9709-a21fe50d1899]
+apps=['org.gnome.clocks.desktop', 'org.gnome.Calendar.desktop']
+name='Time & Date'
+translate=false
+
+[app-folders/folders/e72c6830-ef41-40f4-969a-d96db134e9b2]
+apps=['org.gnome.FileRoller.desktop', 'org.remmina.Remmina.desktop', 'transmission-gtk.desktop', 'usb-creator-gtk.desktop']
+name='Files Utilities'
+translate=false
+
+[break-reminders]
+selected-breaks=@as []
+
+[break-reminders/eyesight]
+play-sound=true
+
+[break-reminders/movement]
+duration-seconds=uint32 300
+interval-seconds=uint32 1800
+play-sound=true
+
+[calendar]
+show-weekdate=true
+
+[datetime]
+automatic-timezone=true
+
+[input-sources]
+per-window=false
+sources=[('xkb', 'us')]
+xkb-options=@as []
+
+[interface]
+accent-color='slate'
+clock-format='24h'
+clock-show-seconds=true
+clock-show-weekday=true
+color-scheme='prefer-dark'
+enable-hot-corners=false
+gtk-theme='Yaru-sage-dark'
+icon-theme='Yaru-sage-dark'
+show-battery-percentage=true
+
+[notifications]
+application-children=['update-manager', 'gnome-power-panel', 'gnome-wellbeing-panel', 'firefox-firefox', 'org-gnome-settings', 'org-gnome-ptyxis', 'thunderbird-thunderbird', 'org-gnome-nautilus', 'org-gnome-dejadup', 'antigravity', 'org-gnome-evolution-alarm-notify', 'org-gnome-texteditor', 'snapd-desktop-integration-snapd-desktop-integration']
+
+[notifications/application/antigravity]
+application-id='antigravity.desktop'
+
+[notifications/application/firefox-firefox]
+application-id='firefox_firefox.desktop'
+
+[notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[notifications/application/gnome-wellbeing-panel]
+application-id='gnome-wellbeing-panel.desktop'
+
+[notifications/application/org-gnome-dejadup]
+application-id='org.gnome.DejaDup.desktop'
+
+[notifications/application/org-gnome-evolution-alarm-notify]
+application-id='org.gnome.Evolution-alarm-notify.desktop'
+
+[notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[notifications/application/org-gnome-ptyxis]
+application-id='org.gnome.Ptyxis.desktop'
+
+[notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[notifications/application/org-gnome-texteditor]
+application-id='org.gnome.TextEditor.desktop'
+
+[notifications/application/snapd-desktop-integration-snapd-desktop-integration]
+application-id='snapd-desktop-integration_snapd-desktop-integration.desktop'
+
+[notifications/application/thunderbird-thunderbird]
+application-id='thunderbird_thunderbird.desktop'
+
+[notifications/application/update-manager]
+application-id='update-manager.desktop'
+
+[peripherals/keyboard]
+numlock-state=true
+
+[peripherals/tablets/222a:5539]
+area=[0.00086805224418640137, 0.00086800754070281982, -0.013368062674999237, -0.001909792423248291]
+
+[peripherals/touchpad]
+click-method='fingers'
+two-finger-scrolling-enabled=true
+
+[privacy]
+disable-camera=true
+
+[screensaver]
+lock-delay=uint32 1800
+
+[search-providers]
+sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
+
+[session]
+idle-delay=uint32 900
+
+[sound]
+event-sounds=true
+
+[wm/preferences]
+num-workspaces=4
