@@ -1,5 +1,9 @@
 name: Lint
 
+permissions:
+  contents: read
+  id-token: write
+
 on:
   push:
     branches: [ main ]
@@ -18,9 +22,6 @@ jobs:
 
       - name: Enable Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
-        permissions:
-          contents: read
-          id-token: write
 
       - name: Install lint tools
         run: |
