@@ -19,11 +19,11 @@ export_if_changed() {
 
   if [ ! -f "$target_file" ] || ! cmp -s "$tmp" "$target_file"; then
     mv "$tmp" "$target_file"
-    echo "Updated: ${target_file#$REPO_ROOT/}"
+    echo "Updated: ${target_file#"$REPO_ROOT"/}"
     CHANGED=1
   else
     rm "$tmp"
-    echo "No change: ${target_file#$REPO_ROOT/}"
+    echo "No change: ${target_file#"$REPO_ROOT"/}"
   fi
 }
 

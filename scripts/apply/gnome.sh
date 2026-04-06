@@ -9,10 +9,10 @@ apply_if_exists() {
   local source_file="$2"
 
   if [ -f "$source_file" ]; then
-    echo "Applying: ${source_file#$REPO_ROOT/}"
+    echo "Applying: ${source_file#"$REPO_ROOT"/}"
     dconf load "$dconf_path" < "$source_file"
   else
-    echo "Skipping missing file: ${source_file#$REPO_ROOT/}"
+    echo "Skipping missing file: ${source_file#"$REPO_ROOT"/}"
   fi
 }
 
