@@ -4,20 +4,37 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-echo "==> Running repo checks"
+echo "==> Running repo checks (via devShell)"
 
-# Shell scripts
-if find scripts -type f -name '*.sh' | grep -q .; then
+cd "$REPO_ROOT/nix"
+
+nix develop --command bash -c '
+  set -u
+
+  failed=0
+
   echo "==> ShellCheck"
-  find scripts -type f -name '*.sh' -print0 | xargs -0 shellcheck
-fi
+  if ! find ../state ../bootstrap -type f -name "*.sh" -print0 | xargs -0 shellcheck; then
+    failed=1
+  fi
 
-# Nix formatting
-echo "==> Checking Nix formatting with alejandra"
-# alejandra --check .
+  echo
+  echo "==> Checking Nix formatting"
+  if ! alejandra --check .; then
+    failed=1
+  fi
 
-# Nix linting
-echo "==> Running statix"
-# statix check .
+  echo
+  echo "==> Running statix"
+  if ! statix check .; then
+    failed=1
+  fi
 
-echo "==> All checks passed"
+  echo
+  if [ "$failed" -ne 0 ]; then
+    echo "❌ One or more checks failed"
+    exit 1
+  fi
+
+  echo "✅ All checks passed"
+'

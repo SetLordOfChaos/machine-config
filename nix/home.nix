@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
-
 {
-  home.username = "set";
-  home.homeDirectory = "/home/set";
-
-  home.stateVersion = "25.05";
-
-  programs.home-manager.enable = true;
+  config,
+  pkgs,
+  ...
+}: {
+  home = {
+    username = "set";
+    homeDirectory = "/home/set";
+    stateVersion = "25.05";
+  };
 
   # Important for Ubuntu / non-NixOS
   targets.genericLinux.enable = true;
@@ -34,13 +35,16 @@
     zoxide
   ];
 
-  programs.git = {
-    enable = true;
-  };
+  programs = {
+    home-manager.enable = true;
 
-  programs.git.settings = {
-    user.name = "set";
-    user.email = "setlordchaos@gmail.com";
+    git = {
+      enable = true;
+      settings = {
+        user.name = "set";
+        user.email = "setlordchaos@gmail.com";
+      };
+    };
   };
 
   programs.bash = {
