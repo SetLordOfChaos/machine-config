@@ -15,6 +15,9 @@
     git
     curl
     wget
+    shellcheck
+    alejandra
+    statix
     ripgrep
     fd
     fzf

@@ -27,5 +27,13 @@
           ./home.nix
         ];
       };
+
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          shellcheck
+          alejandra
+          statix
+        ];
+      };
     };
 }
