@@ -18,14 +18,17 @@ jobs:
 
       - name: Enable Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
+        permissions:
+          contents: read
+          id-token: write
 
       - name: Install lint tools
         run: |
-          nix profile install nixpkgs#shellcheck nixpkgs#alejandra nixpkgs#statix
+          nix profile add nixpkgs#shellcheck nixpkgs#alejandra nixpkgs#statix
 
-      - name: Run ShellCheck
+      - name: Run shellcheck
         run: |
-          find scripts -type f -name '*.sh' -print0 | xargs -0 shellcheck
+          find scripts -type f -name '*.sh' -print0 2>/dev/null | xargs -0 -r shellcheck
 
       - name: Check Nix formatting
         run: |
