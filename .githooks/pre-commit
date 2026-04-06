@@ -12,15 +12,18 @@ nix develop --command bash -c '
   set -u
 
   failed=0
+  formatting_changed=0
 
-  echo "==> ShellCheck"
-  if ! find ../state ../bootstrap -type f -name "*.sh" -print0 | xargs -0 shellcheck; then
-    failed=1
+  echo "==> Auto-formatting Nix files with alejandra"
+  alejandra .
+
+  if ! git -C .. diff --quiet -- .; then
+    formatting_changed=1
   fi
 
   echo
-  echo "==> Checking Nix formatting"
-  if ! alejandra --check .; then
+  echo "==> ShellCheck"
+  if ! find ../state ../bootstrap -type f -name "*.sh" -print0 | xargs -0 shellcheck; then
     failed=1
   fi
 
@@ -31,6 +34,12 @@ nix develop --command bash -c '
   fi
 
   echo
+  if [ "$formatting_changed" -ne 0 ]; then
+    echo "⚠️  Nix files were auto-formatted by alejandra."
+    echo "Please review and re-stage your changes, then commit again."
+    exit 1
+  fi
+
   if [ "$failed" -ne 0 ]; then
     echo "❌ One or more checks failed"
     exit 1

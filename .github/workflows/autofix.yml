@@ -1,0 +1,58 @@
+name: Auto-fix Nix
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v16
+
+      - name: Enable Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v8
+
+      - name: Run auto-fixes
+        run: |
+          cd nix
+          nix develop --command bash -c '
+            alejandra .
+            statix fix .
+          '
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "style: auto-fix Nix formatting and lint"
+          title: "style: auto-fix Nix formatting and lint"
+          body: |
+            This PR was automatically generated to apply safe Nix cleanups:
+            - `alejandra .`
+            - `statix fix .`
+
+            Please review before merging.
+          branch: autofix/nix-style
+          delete-branch: true
