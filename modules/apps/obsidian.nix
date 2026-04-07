@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   version = "1.12.7";
   pname = "obsidian";
   name = "${pname}-${version}";
@@ -18,7 +20,7 @@ let
     inherit pname version;
     dontUnpack = true;
 
-    nativeBuildInputs = [ pkgs.makeWrapper ];
+    nativeBuildInputs = [pkgs.makeWrapper];
 
     installPhase = ''
       runHook preInstall
@@ -69,15 +71,12 @@ let
       platforms = platforms.linux;
     };
   };
-in
-{
+in {
   home.packages = [
     obsidian
   ];
 
-  home.file.".local/share/applications/obsidian.desktop".source =
-    "${obsidian}/share/applications/obsidian.desktop";
+  home.file.".local/share/applications/obsidian.desktop".source = "${obsidian}/share/applications/obsidian.desktop";
 
-  home.file.".local/share/icons/hicolor/512x512/apps/obsidian.png".source =
-    "${obsidian}/share/icons/hicolor/512x512/apps/obsidian.png";
+  home.file.".local/share/icons/hicolor/512x512/apps/obsidian.png".source = "${obsidian}/share/icons/hicolor/512x512/apps/obsidian.png";
 }
