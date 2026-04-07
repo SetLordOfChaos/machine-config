@@ -59,5 +59,9 @@ echo "==> Applying Home Manager config"
 cd "$NIX_DIR"
 nix run github:nix-community/home-manager -- switch --flake ".#$USERNAME"
 
+# --- Importing GNOME desktop settings ---
+echo "==> Importing GNOME desktop settings"
+./state/import/all.sh
+
 echo "==> Bootstrap complete"
 echo "👉 Open a NEW terminal to load your environment"
