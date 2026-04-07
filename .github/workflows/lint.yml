@@ -27,7 +27,9 @@ jobs:
 
       - name: Run shellcheck
         run: |
-          find scripts -type f -name '*.sh' -print0 2>/dev/null | xargs -0 -r shellcheck
+          find . -type f -name '*.sh' \
+            -not -path './.git/*' \
+            -print0 | xargs -0 -r shellcheck
 
       - name: Check Nix formatting
         run: |

@@ -22,7 +22,7 @@ run_export() {
   fi
 }
 
-run_export ./scripts/export/gnome.sh
+run_export ./state/export/gnome.sh
 
 echo
 if [ "$CHANGED" -eq 1 ]; then
