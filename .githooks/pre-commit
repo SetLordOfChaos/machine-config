@@ -11,19 +11,20 @@ cd "$REPO_ROOT/nix"
 nix develop --command bash -c '
   set -u
 
+  cd "$(git rev-parse --show-toplevel)"
   failed=0
   formatting_changed=0
 
   echo "==> Auto-formatting Nix files with alejandra"
   alejandra .
 
-  if ! git -C .. diff --quiet -- .; then
+  if ! git -C . diff --quiet -- .; then
     formatting_changed=1
   fi
 
   echo
   echo "==> ShellCheck"
-  if ! find ../state ../bootstrap -type f -name "*.sh" -print0 | xargs -0 shellcheck; then
+  if ! find . -type f -name '*.sh' -not -path './.git/*' -print0 | xargs -0 -r shellcheck; then
     failed=1
   fi
 

@@ -72,11 +72,13 @@
     };
   };
 in {
-  home.packages = [
-    obsidian
-  ];
+  home = {
+    packages = [
+      obsidian
+    ];
 
-  home.file.".local/share/applications/obsidian.desktop".source = "${obsidian}/share/applications/obsidian.desktop";
+    file.".local/share/applications/obsidian.desktop".source = "${obsidian}/share/applications/obsidian.desktop";
 
-  home.file.".local/share/icons/hicolor/512x512/apps/obsidian.png".source = "${obsidian}/share/icons/hicolor/512x512/apps/obsidian.png";
+    file.".local/share/icons/hicolor/512x512/apps/obsidian.png".source = "${obsidian}/share/icons/hicolor/512x512/apps/obsidian.png";
+  };
 }
