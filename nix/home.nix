@@ -29,7 +29,6 @@
     unzip
     zip
     htop
-    vscode
     tmux
     starship
     zoxide
@@ -67,5 +66,6 @@
 
   imports = [
     ./../modules/apps/obsidian.nix
+    ./../modules/apps/vscode.nix
   ];
 }
